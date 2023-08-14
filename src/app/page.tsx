@@ -1,6 +1,7 @@
 "use client"
-import NewTodoListInput from '@/component/NewTodoInput'
-import TodoList from '@/component/TodoList'
+import dynamic from 'next/dynamic'
+const NewTodoListInput = dynamic(() => import('@/component/NewTodoInput'), { ssr: false })
+const TodoList = dynamic(() => import('@/component/TodoList'), { ssr: false })
 import { useRecoilValue } from "recoil";
 import type { AppState } from "./dataStructure";
 import { recoilState, LocalStorageKey } from "./dataStructure";
